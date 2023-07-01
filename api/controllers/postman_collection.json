@@ -1,0 +1,411 @@
+{	
+	"postmanweblink": {
+		"link" : "https://documenter.getpostman.com/view/26975628/2s93zCXzas"
+	},
+	"info": {
+		"_postman_id": "b53a2a1a-fadd-40bd-884c-a490cabd0e63",
+		"name": "mongoTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26975628"
+	},
+	"item": [
+		{
+			"name": "STORAGE",
+			"item": [
+				{
+					"name": "STORAGE: subir archivo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjg4MjMyODcyLCJleHAiOjE2ODgyNDAwNzJ9.PaQrmgDvgX8QFovKM-KUzmiIr-OH7DqBc6fRfTHl-zc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "myfile",
+									"type": "file",
+									"src": "/C:/Users/zabal/Documents/Grabaciones de sonido/Grabación.mp3"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/storage",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"storage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "STORAGE: enviar archivos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGEwNDAxMmFiNDMzNjE1MjYyNTJkNmQiLCJyb2xlIjpbInVzZXIiXSwiaWF0IjoxNjg4MjI0NTg2LCJleHAiOjE2ODgyMzE3ODZ9.pV5oq3ARP61GEAxr1JTvjG5WvBbryyrcv8EvkG2VvwU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Api-123",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/api/storage/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"storage",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "STORAGE: enviar archivo detalle",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/storage/649e008a65e2b3e432f10ec7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"storage",
+								"649e008a65e2b3e432f10ec7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "STORAGE: eliminar archivo detalle Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/storage/649e008c65e2b3e432f10ec9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"storage",
+								"649e008c65e2b3e432f10ec9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TRACKS",
+			"item": [
+				{
+					"name": "TRACKS: crear cancion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDllMWMzODZiMDdhMjQ5NDU1NzU0ODMiLCJyb2xlIjpbImFkbWluIl0sImlhdCI6MTY4ODIyNjk3MCwiZXhwIjoxNjg4MjM0MTcwfQ.RdkVQsRHvW8GKa_-MrpNLaWRZVnAIaaC9HdHNLs9G7Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "api_key",
+								"value": "gabi0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"artist\": {\r\n            \"name\": \"aaaaaa\",\r\n            \"nickname\": \"aaa\",\r\n            \"nationality\": \"AA\"\r\n        },\r\n        \"duration\": {\r\n            \"start\": 0,\r\n            \"end\": 1\r\n        },\r\n        \"name\": \"AA\",\r\n        \"album\": \"Album\",\r\n        \"cover\": \"http://aaaaa.com\",\r\n        \"mediaId\": \"9b36cf0a-6684-49d7-8de4-648e52584748\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/tracks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tracks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TRACKS: actualizar cancion",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "api12345",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"artist\": {\r\n            \"name\": \"leifer\",\r\n            \"nickname\": \"leifername\",\r\n            \"nationality\": \"VE\"\r\n        },\r\n        \"duration\": {\r\n            \"start\": 0,\r\n            \"end\": 1\r\n        },\r\n        \"name\": \"AAAAALeifer\",\r\n        \"album\": \"Album\",\r\n        \"cover\": \"http://mmmmmm.com\",\r\n        \"mediaId\": \"649c8855de6f72ac1fd48031\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/tracks/649c984bb3d90a29117e3059",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tracks",
+								"649c984bb3d90a29117e3059"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TRACKS: enviar canciones",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjg4MjMwNjE1LCJleHAiOjE2ODgyMzc4MTV9.6RExKfZ7O6ct_1UGuaakapwSo3FbNC2ku5NReCq0jew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/tracks/a0cccfc5-a607-45d5-b869-270896580654",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tracks",
+								"a0cccfc5-a607-45d5-b869-270896580654"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TRACKS: enviar cancion detalle",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjg4MjMwNjE1LCJleHAiOjE2ODgyMzc4MTV9.6RExKfZ7O6ct_1UGuaakapwSo3FbNC2ku5NReCq0jew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/tracks/a0cccfc5-a607-45d5-b869-270896580654",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tracks",
+								"a0cccfc5-a607-45d5-b869-270896580654"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TRACKS: eliminar cancion",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/tracks/649df7189d2d2376c2b6f439",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tracks",
+								"649df7189d2d2376c2b6f439"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ChangoZabala\",\r\n    \"age\": 26,\r\n    \"email\": \"test311@correo.com\",\r\n    \"password\": \"micontraseña\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "algorithm",
+									"value": "HS256",
+									"type": "string"
+								},
+								{
+									"key": "isSecretBase64Encoded",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "payload",
+									"value": "{}",
+									"type": "string"
+								},
+								{
+									"key": "headerPrefix",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "queryParamKey",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "header",
+									"value": "{}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"email\": \"micorreo@correo.com\",\r\n    \"password\": \"micontraseña\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
